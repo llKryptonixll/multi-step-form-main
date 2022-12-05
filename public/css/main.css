@@ -57,7 +57,7 @@ main .content-wrapper .header p:nth-child(2) {
   font-size: 1.1rem;
 }
 main .content-wrapper .current-step-container {
-  background-image: url("/public/assets/images/bg-sidebar-desktop.svg");
+  background-image: url("../assets/images/bg-sidebar-desktop.svg");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;

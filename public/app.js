@@ -29,6 +29,11 @@ const next = () => {
     const numberInput = document.querySelector(".number-input");
     const errorMessages = document.querySelectorAll(".error-message");
 
+    // remove navigation if user reaches end
+    if(currentSection == 3){
+        const navigation = document.querySelector(".navigation").style.display = "none";
+    }
+
     if(nameInput.value === ""){
         nameInput.style.borderColor = "hsl(354, 84%, 57%)";
         errorMessages[0].style.display = "block";
@@ -45,16 +50,10 @@ const next = () => {
         prevButton.style.visibility = "visible";
         currentSection >= sections.length - 1 ? currentSection = 4 : currentSection++;
         initNavigation(currentSection, sections);
-        console.log(sections)
 
         if(currentSection == 3){
             calcTotal_costs();
             nextButton.innerText = "Submit";
-        }
-        if(currentSection == 4){
-            nextButton.style.display = "none";
-            prevButton.style.display = "none";
-            alert(3)
         }
 
         // set border color and error messages to default
@@ -99,6 +98,9 @@ function switchBilling_option () {
 
         // display discount offer
         displayDiscount("block");
+
+        // change summary amounts to yr if user clicks toggle 
+        changeSummary_amounts(`+$${10}/yr`, `+$${20}/yr`, `+$${20}/yr`, `+$${90}/yr`, `+$${120}/yr`, `+$${150}/yr`);
     }
     else{
         // this styles the text if user uses the switch
@@ -113,7 +115,45 @@ function switchBilling_option () {
 
         // hide discount offer
         displayDiscount("none");
+
+        // change summary amounts to mo if user clicks toggle 
+        changeSummary_amounts(`+$${1}/mo`, `+$${2}/mo`, `+$${2}/mo`, `+$${9}/yr`, `+$${12}/yr`, `+$${15}/yr`);
     }
+}
+
+// avoid mistakes if user switches toggle while elements are in summary list
+function changeSummary_amounts(value1, value2, value3, value4, value5, value6) {
+    const summaryList_elements = document.querySelectorAll(".element");
+    summaryList_elements.forEach((element) => {
+        const addOn_name = element.children[0]; 
+        const addOn_amount = element.children[1]; 
+
+        if(addOn_name.innerText == "Online Service"){
+            addOn_amount.innerText = value1;
+        }
+        if(addOn_name.innerText == "Larger storage"){
+            addOn_amount.innerText = value2;
+        }
+        if(addOn_name.innerText == "Customizable Profile"){
+            addOn_amount.innerText = value3;
+        }
+    });
+
+    const planTypes = document.querySelectorAll(".plan-type");
+    const summaryHeader_amount = document.querySelector(".plan-amount"); 
+
+    planTypes.forEach((type) => {
+        if(type.innerText == "Arcade"){
+            summaryHeader_amount.innerText = value4;
+        }
+        if(type.innerText == "Advanced"){
+            summaryHeader_amount.innerText = value5;
+        }
+        if(type.innerText == "Pro"){
+            summaryHeader_amount.innerText = value6;
+        }
+
+    });
 }
 
 function displayDiscount (displayType){
@@ -217,7 +257,7 @@ addOn_buttons.forEach((button, index) => {
             containerList.innerHTML +=
             `
             <div class="add-on element">
-                <p>${addOn_name}</p>
+                <p class="add-on-name">${addOn_name}</p>
                 <p class="add-on-amount">${addOn_amount}</p>
             </div>  
             `

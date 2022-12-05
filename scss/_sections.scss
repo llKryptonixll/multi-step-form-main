@@ -167,7 +167,8 @@ main{
                             height: 150px;
                             display: grid;
                             align-items: center;
-                            padding-right: 20px !important;
+                            padding-left: 20px;
+                            text-align: left;
         
                             .option-text{
                                 display: grid;
@@ -180,6 +181,11 @@ main{
                                 }
                                 span:nth-child(2){
                                     color: $Cool_gray;
+                                }
+                                span:nth-child(3){
+                                    color: $marine_blue;
+                                    font-weight: 500;
+                                    display: none;
                                 }
                             }
                         }

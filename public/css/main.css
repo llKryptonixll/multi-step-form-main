@@ -181,7 +181,8 @@ main .content-wrapper .right-container .section-container .select-plan-section .
   height: 150px;
   display: grid;
   align-items: center;
-  padding-right: 20px !important;
+  padding-left: 20px;
+  text-align: left;
 }
 main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option .option-text {
   display: grid;
@@ -194,6 +195,11 @@ main .content-wrapper .right-container .section-container .select-plan-section .
 }
 main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option .option-text span:nth-child(2) {
   color: hsl(231deg, 11%, 63%);
+}
+main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option .option-text span:nth-child(3) {
+  color: hsl(213deg, 96%, 18%);
+  font-weight: 500;
+  display: none;
 }
 main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option:hover {
   border-color: hsl(243deg, 100%, 62%);

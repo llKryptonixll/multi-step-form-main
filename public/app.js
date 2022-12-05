@@ -55,6 +55,9 @@ const next = () => {
             calcTotal_costs();
             nextButton.innerText = "Submit";
         }
+        else{
+            nextButton.innerText = "Next Step";
+        }
 
         // set border color and error messages to default
         nameInput.style.borderColor = "hsl(229, 24%, 87%)";

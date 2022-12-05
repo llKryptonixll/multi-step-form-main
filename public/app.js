@@ -85,7 +85,6 @@ function switchBilling_option () {
 
     const monthlyText = document.querySelector(".monthly");
     const yearlyText = document.querySelector(".yearly");
-    const discounts = document.querySelectorAll(".year-discount");
 
     if(circle.classList.contains("transform-circle")){
         // this styles the text if user uses the switch
@@ -118,9 +117,11 @@ function switchBilling_option () {
 }
 
 function displayDiscount (displayType){
+    const discounts = document.querySelectorAll(".year-discount");
+
     discounts.forEach((discount) => {
         discount.style.display = displayType;
-    })
+    });
 }
 
 function changeBilling_amounts(value1, value2, value3, value4, value5, value6, value7) {

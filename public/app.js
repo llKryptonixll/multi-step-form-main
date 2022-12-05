@@ -27,39 +27,17 @@ const next = () => {
     const nameInput = document.querySelector(".name-input");
     const mailInput = document.querySelector(".mail-input");
     const numberInput = document.querySelector(".number-input");
-    const errorMessages = document.querySelectorAll(".error-message");
 
     // remove navigation if user reaches end
     if(currentSection == 3){
         const navigation = document.querySelector(".navigation").style.display = "none";
     }
 
-    if(nameInput.value == ""){
-        nameInput.style.borderColor = "hsl(354, 84%, 57%)";
-        errorMessages[0].style.display = "block";
-    }
-    else{
-        nameInput.style.borderColor = "hsl(229, 24%, 87%)";
-        errorMessages[0].style.display = "none";
-    }
+    // message user if inputs are valid or not
+    changeBorderColor(nameInput, 0, "hsl(354, 84%, 57%)", "hsl(229, 24%, 87%)");
+    changeBorderColor(mailInput, 1, "hsl(354, 84%, 57%)", "hsl(229, 24%, 87%)");
+    changeBorderColor(numberInput, 2, "hsl(354, 84%, 57%)", "hsl(229, 24%, 87%)");
 
-    if(mailInput.value == ""){
-        mailInput.style.borderColor = "hsl(354, 84%, 57%)";
-        errorMessages[1].style.display = "block"; 
-    }
-    else{
-        mailInput.style.borderColor = "hsl(229, 24%, 87%)";
-        errorMessages[1].style.display = "none";  
-    }
-
-    if(numberInput.value == ""){
-        numberInput.style.borderColor = "hsl(354, 84%, 57%)";
-        errorMessages[2].style.display = "block";
-    }
-    else{
-        numberInput.style.borderColor = "hsl(229, 24%, 87%)";
-        errorMessages[2].style.display = "none";  
-    }
 
     if(nameInput.value !== "" && mailInput.value !== "" && numberInput.value !== ""){
         prevButton.style.visibility = "visible";
@@ -81,6 +59,19 @@ const prev = () => {
 
 nextButton.addEventListener("click", next);
 prevButton.addEventListener("click", prev);
+
+function changeBorderColor(input, errorIndex, hslNew, hslDefault) {
+    const errorMessages = document.querySelectorAll(".error-message");
+
+    if(input.value == ""){
+        input.style.borderColor = hslNew;
+        errorMessages[errorIndex].style.display = "block";
+    }
+    else{
+        input.style.borderColor = hslDefault;
+        errorMessages[errorIndex].style.display = "none";
+    } 
+}
 
 // toggle between monthly and yearly billing option
 const toggleSwitch = document.querySelector(".toggle-switch");

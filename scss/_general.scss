@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+button{
+    border: unset;
+    background-color: unset;
+    cursor: pointer;
+}
+
+/* classes for js */
+.transform-circle{
+    transform: translateX(17px);
+    transition: 200ms;
+}
+.change-color-marine-blue{
+    transition: 200ms;
+    color: $marine_blue;
+}
+.change-color-cool-gray{
+    transition: 200ms;
+    color: $Cool_gray;
+}

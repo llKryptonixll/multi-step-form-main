@@ -1,0 +1,151 @@
+@media (max-width: 900px) {
+    main{
+        .content-wrapper{
+            background-color: unset;
+            box-shadow: unset;
+            border-radius: unset;
+            width: 100%;
+            height: 100%;
+            grid-template-columns: 100%;
+            grid-template-rows: 25% 75%;
+
+            .current-step-container{
+                width: 100%;
+                height: 100%;
+                border-radius: unset;
+                background-image: url("/public/assets/images/bg-sidebar-mobile.svg");
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .current-step:nth-child(1){
+                    margin-top: unset;
+                }
+                .current-step{
+                    width: 50px;
+                    height: 50px;
+
+                    .step-index{
+                        margin-right: unset;
+                        margin: auto;
+                    }
+
+                    .step-type-container{
+                        display: none;
+                    }
+                }
+            }
+
+            .right-container{
+                align-self: flex-start;
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+                .section-container{
+                    background-color: $White;
+                    border-radius: 15px;
+                    box-shadow: 5px 5px 15px rgb(185, 185, 185);
+                    position: relative;
+                    top: -50px;
+                    width: 95%;
+                    justify-self: center;
+
+                    .personal-info-section{
+                        .header{
+                            align-content: center;
+                        }
+
+                        form, .header{
+                            width: 90%;
+                            justify-self: center;
+                        }
+                    }
+
+                    .select-plan-section{
+
+                        .header, .billing-option-container, .toggle-switch-container{    
+                            width: 90%;
+                            justify-self: center; 
+                        }
+                        .header{
+                            margin-top: 20px;
+                        }
+            
+                        .billing-option-container{
+                            display: grid;
+                            gap: 10px;
+            
+                            .billing-option{
+                                display: flex;
+                                height: 80px;
+                                width: 100%;
+                                padding-left: unset;
+
+                                .option-icon{
+                                    margin-right: 20px;
+                                    margin-left: 20px;
+                                }
+                            }
+                            .billing-option:nth-child(2){
+                                margin-left: unset;
+                                margin-right: unset;
+                            }
+                        }
+                    }
+
+                    .add-ons-section{
+                        .header, .add-ons-container{
+                            width: 90%;
+                            justify-self: center;
+                        }
+                        .header{
+                            margin-top: 20px;
+                        }
+
+                        .add-ons-container{
+                            .add-on{
+                                .wrapper{
+                                    .text-container{
+                                        p:nth-child(1){
+                                            font-size: 1rem;
+                                        }
+                                        p:nth-child(2){
+                                            font-size: 0.8rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .summary-section{
+                        .header, .details-container, .total-costs-container{
+                            width: 90%;
+                            justify-self: center;
+                        }
+                        .header{
+                            margin-top: 20px;
+                        }
+                    }
+                }
+
+                nav{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 80px;
+                    background-color: $White;
+
+                    .go-back-btn{
+                        margin-left: 2.5%;
+                    }
+                    .next-step-btn{
+                        margin-right: 2.5%;
+                    }
+                }
+            }
+        }
+    }
+}

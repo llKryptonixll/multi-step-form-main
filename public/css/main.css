@@ -1,0 +1,510 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+button {
+  border: unset;
+  background-color: unset;
+  cursor: pointer;
+}
+
+/* classes for js */
+.transform-circle {
+  transform: translateX(17px);
+  transition: 200ms;
+}
+
+.change-color-marine-blue {
+  transition: 200ms;
+  color: hsl(213deg, 96%, 18%);
+}
+
+.change-color-cool-gray {
+  transition: 200ms;
+  color: hsl(231deg, 11%, 63%);
+}
+
+main {
+  height: 100vh;
+  min-height: 800px;
+  background-color: hsl(217deg, 100%, 97%);
+  display: grid;
+  place-items: center;
+}
+main .content-wrapper {
+  width: min(90%, 1000px);
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgb(206, 206, 206);
+  height: 600px;
+  background-color: hsl(0deg, 0%, 100%);
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+main .content-wrapper .header {
+  display: grid;
+  align-content: flex-start;
+  gap: 10px;
+}
+main .content-wrapper .header p:nth-child(1) {
+  color: hsl(213deg, 96%, 18%);
+  font-size: 2rem;
+  font-weight: bold;
+}
+main .content-wrapper .header p:nth-child(2) {
+  color: hsl(231deg, 11%, 63%);
+  font-size: 1.1rem;
+}
+main .content-wrapper .current-step-container {
+  background-image: url("/public/assets/images/bg-sidebar-desktop.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 7px;
+  width: 90%;
+  height: 95%;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  align-content: flex-start;
+  gap: 30px;
+  justify-items: center;
+}
+main .content-wrapper .current-step-container .current-step:nth-child(1) {
+  margin-top: 30px;
+}
+main .content-wrapper .current-step-container .current-step {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+main .content-wrapper .current-step-container .current-step .step-index {
+  margin-right: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: hsl(0deg, 0%, 100%);
+  border: 1px solid hsl(0deg, 0%, 100%);
+}
+main .content-wrapper .current-step-container .current-step .step-type-container {
+  display: grid;
+  gap: 3px;
+}
+main .content-wrapper .current-step-container .current-step .step-type-container p:nth-child(1) {
+  color: hsl(231deg, 11%, 63%);
+  font-size: 0.8rem;
+}
+main .content-wrapper .current-step-container .current-step .step-type-container p:nth-child(2) {
+  font-weight: bold;
+  color: hsl(0deg, 0%, 100%);
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+}
+main .content-wrapper .right-container {
+  align-self: center;
+  justify-self: center;
+  width: 80%;
+  height: 80%;
+  display: grid;
+  grid-template-rows: 90% 10%;
+}
+main .content-wrapper .right-container .section-container {
+  position: relative;
+}
+main .content-wrapper .right-container .section-container section {
+  position: absolute;
+}
+main .content-wrapper .right-container .section-container .personal-info-section {
+  height: 100%;
+  min-height: fit-content;
+  display: grid;
+  grid-template-rows: 20% 80%;
+  gap: 10px;
+}
+main .content-wrapper .right-container .section-container .personal-info-section form {
+  display: grid;
+  align-content: flex-start;
+  gap: 20px;
+}
+main .content-wrapper .right-container .section-container .personal-info-section form .input-container {
+  display: grid;
+  gap: 5px;
+}
+main .content-wrapper .right-container .section-container .personal-info-section form .input-container .label-container {
+  display: flex;
+  justify-content: space-between;
+}
+main .content-wrapper .right-container .section-container .personal-info-section form .input-container .label-container label, main .content-wrapper .right-container .section-container .personal-info-section form .input-container .label-container .error-message {
+  font-weight: 500;
+  font-size: 1rem;
+}
+main .content-wrapper .right-container .section-container .personal-info-section form .input-container .label-container label {
+  color: hsl(213deg, 96%, 18%);
+}
+main .content-wrapper .right-container .section-container .personal-info-section form .input-container .label-container .error-message {
+  color: hsl(354deg, 84%, 57%);
+  display: none;
+}
+main .content-wrapper .right-container .section-container .personal-info-section form .input-container input {
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid hsl(229deg, 24%, 87%);
+  outline: none;
+}
+main .content-wrapper .right-container .section-container .personal-info-section form .input-container input:focus {
+  border: 1px solid hsl(243deg, 100%, 62%);
+  transition: 500ms;
+}
+main .content-wrapper .right-container .section-container .personal-info-section form .input-container ::placeholder {
+  padding-left: 20px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: hsl(231deg, 11%, 63%);
+}
+main .content-wrapper .right-container .section-container .select-plan-section {
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-content: flex-start;
+  gap: 40px;
+}
+main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container {
+  display: flex;
+}
+main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option {
+  border: 1px solid hsl(229deg, 24%, 87%);
+  border-radius: 5px;
+  width: min(90%, 132px);
+  height: 150px;
+  display: grid;
+  align-items: center;
+  padding-right: 20px !important;
+}
+main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option .option-text {
+  display: grid;
+  gap: 5px;
+}
+main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option .option-text span:nth-child(1) {
+  color: hsl(213deg, 96%, 18%);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option .option-text span:nth-child(2) {
+  color: hsl(231deg, 11%, 63%);
+}
+main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option:hover {
+  border-color: hsl(243deg, 100%, 62%);
+  transition: 300ms;
+}
+main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option:focus {
+  border-color: hsl(243deg, 100%, 62%);
+  background-color: hsl(217deg, 100%, 97%);
+}
+main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option:nth-child(2) {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+main .content-wrapper .right-container .section-container .select-plan-section .toggle-switch-container {
+  display: flex;
+  background-color: rgba(236, 236, 236, 0.4941176471);
+  height: 50px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 120px);
+}
+main .content-wrapper .right-container .section-container .select-plan-section .toggle-switch-container p {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+main .content-wrapper .right-container .section-container .select-plan-section .toggle-switch-container div {
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: hsl(213deg, 96%, 18%);
+  width: 40px;
+  border-radius: 10px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+main .content-wrapper .right-container .section-container .select-plan-section .toggle-switch-container div div {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 13px;
+  height: 13px;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+  transition: 200ms;
+}
+main .content-wrapper .right-container .section-container .add-ons-section {
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-content: flex-start;
+  gap: 30px;
+}
+main .content-wrapper .right-container .section-container .add-ons-section .add-ons-container {
+  display: grid;
+  gap: 20px;
+}
+main .content-wrapper .right-container .section-container .add-ons-section .add-ons-container .add-on {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid hsl(229deg, 24%, 87%);
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+}
+main .content-wrapper .right-container .section-container .add-ons-section .add-ons-container .add-on .wrapper {
+  display: flex;
+  align-items: center;
+}
+main .content-wrapper .right-container .section-container .add-ons-section .add-ons-container .add-on .wrapper .check-box-container input {
+  margin-right: 20px;
+}
+main .content-wrapper .right-container .section-container .add-ons-section .add-ons-container .add-on .wrapper .text-container {
+  display: grid;
+  gap: 5px;
+}
+main .content-wrapper .right-container .section-container .add-ons-section .add-ons-container .add-on .wrapper .text-container p:nth-child(1) {
+  color: hsl(213deg, 96%, 18%);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+main .content-wrapper .right-container .section-container .add-ons-section .add-ons-container .add-on .wrapper .text-container p:nth-child(2) {
+  color: hsl(231deg, 11%, 63%);
+}
+main .content-wrapper .right-container .section-container .add-ons-section .add-ons-container .add-on .amount-container {
+  color: hsl(243deg, 100%, 62%);
+  font-weight: 500;
+}
+main .content-wrapper .right-container .section-container .add-ons-section .add-ons-container .add-on:hover {
+  border-color: hsl(243deg, 100%, 62%);
+  transition: 300ms;
+}
+main .content-wrapper .right-container .section-container .summary-section {
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-content: flex-start;
+  gap: 30px;
+}
+main .content-wrapper .right-container .section-container .summary-section .details-container {
+  display: grid;
+  padding: 20px;
+  gap: 20px;
+  background-color: rgba(240, 240, 240, 0.631372549);
+}
+main .content-wrapper .right-container .section-container .summary-section .details-container hr {
+  border-color: hsl(229deg, 24%, 87%);
+  border-top: none;
+}
+main .content-wrapper .right-container .section-container .summary-section .details-container .selected-plan-container {
+  display: flex;
+  justify-content: space-between;
+}
+main .content-wrapper .right-container .section-container .summary-section .details-container .selected-plan-container .text p {
+  color: hsl(213deg, 96%, 18%);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+main .content-wrapper .right-container .section-container .summary-section .details-container .selected-plan-container .text button {
+  color: hsl(231deg, 11%, 63%);
+  text-decoration: underline;
+}
+main .content-wrapper .right-container .section-container .summary-section .details-container .selected-plan-container .text button:hover {
+  color: hsl(243deg, 100%, 62%);
+}
+main .content-wrapper .right-container .section-container .summary-section .details-container .selected-plan-container p {
+  color: hsl(213deg, 96%, 18%);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+main .content-wrapper .right-container .section-container .summary-section .details-container .selected-add-ons-container {
+  display: grid;
+  gap: 15px;
+}
+main .content-wrapper .right-container .section-container .summary-section .details-container .selected-add-ons-container .add-on {
+  display: flex;
+  justify-content: space-between;
+}
+main .content-wrapper .right-container .section-container .summary-section .details-container .selected-add-ons-container .add-on p:nth-child(1) {
+  color: hsl(231deg, 11%, 63%);
+}
+main .content-wrapper .right-container .section-container .summary-section .details-container .selected-add-ons-container .add-on p:nth-child(2) {
+  color: hsl(213deg, 96%, 18%);
+  font-weight: 500;
+}
+main .content-wrapper .right-container .section-container .summary-section .total-costs-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+main .content-wrapper .right-container .section-container .summary-section .total-costs-container p:nth-child(1) {
+  color: hsl(231deg, 11%, 63%);
+}
+main .content-wrapper .right-container .section-container .summary-section .total-costs-container p:nth-child(2) {
+  color: hsl(243deg, 100%, 62%);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+main .content-wrapper .right-container .section-container .submit-section {
+  display: grid;
+  gap: 20px;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+main .content-wrapper .right-container nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .content-wrapper .right-container nav .go-back-btn, main .content-wrapper .right-container nav .next-step-btn {
+  font-weight: 500;
+  font-size: 1rem;
+  transition: 300ms;
+}
+main .content-wrapper .right-container nav .go-back-btn:hover {
+  color: hsl(213deg, 96%, 18%);
+}
+main .content-wrapper .right-container nav .next-step-btn:hover {
+  background-color: hsl(243deg, 100%, 62%);
+}
+main .content-wrapper .right-container nav .go-back-btn {
+  color: hsl(231deg, 11%, 63%);
+  visibility: hidden;
+}
+main .content-wrapper .right-container nav .next-step-btn {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(213deg, 96%, 18%);
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  main .content-wrapper {
+    background-color: unset;
+    box-shadow: unset;
+    border-radius: unset;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 25% 75%;
+  }
+  main .content-wrapper .current-step-container {
+    width: 100%;
+    height: 100%;
+    border-radius: unset;
+    background-image: url("/public/assets/images/bg-sidebar-mobile.svg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .content-wrapper .current-step-container .current-step:nth-child(1) {
+    margin-top: unset;
+  }
+  main .content-wrapper .current-step-container .current-step {
+    width: 50px;
+    height: 50px;
+  }
+  main .content-wrapper .current-step-container .current-step .step-index {
+    margin-right: unset;
+    margin: auto;
+  }
+  main .content-wrapper .current-step-container .current-step .step-type-container {
+    display: none;
+  }
+  main .content-wrapper .right-container {
+    align-self: flex-start;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  main .content-wrapper .right-container .section-container {
+    background-color: hsl(0deg, 0%, 100%);
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgb(185, 185, 185);
+    position: relative;
+    top: -50px;
+    width: 95%;
+    justify-self: center;
+  }
+  main .content-wrapper .right-container .section-container .personal-info-section .header {
+    align-content: center;
+  }
+  main .content-wrapper .right-container .section-container .personal-info-section form, main .content-wrapper .right-container .section-container .personal-info-section .header {
+    width: 90%;
+    justify-self: center;
+  }
+  main .content-wrapper .right-container .section-container .select-plan-section .header, main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container, main .content-wrapper .right-container .section-container .select-plan-section .toggle-switch-container {
+    width: 90%;
+    justify-self: center;
+  }
+  main .content-wrapper .right-container .section-container .select-plan-section .header {
+    margin-top: 20px;
+  }
+  main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container {
+    display: grid;
+    gap: 10px;
+  }
+  main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    padding-left: unset;
+  }
+  main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option .option-icon {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  main .content-wrapper .right-container .section-container .select-plan-section .billing-option-container .billing-option:nth-child(2) {
+    margin-left: unset;
+    margin-right: unset;
+  }
+  main .content-wrapper .right-container .section-container .add-ons-section .header, main .content-wrapper .right-container .section-container .add-ons-section .add-ons-container {
+    width: 90%;
+    justify-self: center;
+  }
+  main .content-wrapper .right-container .section-container .add-ons-section .header {
+    margin-top: 20px;
+  }
+  main .content-wrapper .right-container .section-container .add-ons-section .add-ons-container .add-on .wrapper .text-container p:nth-child(1) {
+    font-size: 1rem;
+  }
+  main .content-wrapper .right-container .section-container .add-ons-section .add-ons-container .add-on .wrapper .text-container p:nth-child(2) {
+    font-size: 0.8rem;
+  }
+  main .content-wrapper .right-container .section-container .summary-section .header, main .content-wrapper .right-container .section-container .summary-section .details-container, main .content-wrapper .right-container .section-container .summary-section .total-costs-container {
+    width: 90%;
+    justify-self: center;
+  }
+  main .content-wrapper .right-container .section-container .summary-section .header {
+    margin-top: 20px;
+  }
+  main .content-wrapper .right-container nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: hsl(0deg, 0%, 100%);
+  }
+  main .content-wrapper .right-container nav .go-back-btn {
+    margin-left: 2.5%;
+  }
+  main .content-wrapper .right-container nav .next-step-btn {
+    margin-right: 2.5%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

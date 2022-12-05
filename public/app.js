@@ -43,8 +43,9 @@ const next = () => {
     }
     else{
         prevButton.style.visibility = "visible";
-        currentSection >= sections.length - 1 ? currentSection = 3 : currentSection++;
+        currentSection >= sections.length - 1 ? currentSection = 4 : currentSection++;
         initNavigation(currentSection, sections);
+        console.log(sections)
 
         if(currentSection == 3){
             calcTotal_costs();
@@ -53,6 +54,7 @@ const next = () => {
         if(currentSection == 4){
             nextButton.style.display = "none";
             prevButton.style.display = "none";
+            alert(3)
         }
 
         // set border color and error messages to default
@@ -93,7 +95,7 @@ function switchBilling_option () {
         monthlyText.classList.add("change-color-cool-gray");
 
         // change the values if user switches
-        changeBilling_amounts("$90/yr", "$120/yr", "$150/yr", "+$10/yr", "+$20/yr", "+$20/yr");
+        changeBilling_amounts("$90/yr", "$120/yr", "$150/yr", "+$10/yr", "+$20/yr", "+$20/yr", "year");
     }
     else{
         // this styles the text if user uses the switch
@@ -104,17 +106,18 @@ function switchBilling_option () {
         monthlyText.classList.add("change-color-marine-blue");
 
         // change the values if user switches
-        changeBilling_amounts("$9/mo", "$12/mo", "$15/mo", "+$1/mo", "+$2/mo", "+$2/mo");
+        changeBilling_amounts("$9/mo", "$12/mo", "$15/mo", "+$1/mo", "+$2/mo", "+$2/mo", "month");
     }
 }
 
-function changeBilling_amounts(value1, value2, value3, value4, value5, value6) {
+function changeBilling_amounts(value1, value2, value3, value4, value5, value6, value7) {
     const arcadeAmount = document.querySelector(".arcade-value");
     const advancedAmount = document.querySelector(".advanced-value");
     const proAmount = document.querySelector(".pro-value");
     const onlineService_amount = document.querySelector(".online-service-amount");
     const largerStorage_amount = document.querySelector(".larger-storage-amount");
     const customProfile_amount = document.querySelector(".custom-profile-amount");
+    const total_month_year = document.querySelector(".month-year");
 
     arcadeAmount.innerText = value1;
     advancedAmount.innerText = value2;
@@ -122,6 +125,7 @@ function changeBilling_amounts(value1, value2, value3, value4, value5, value6) {
     onlineService_amount.innerText = value4;
     largerStorage_amount.innerText = value5;
     customProfile_amount.innerText = value6;
+    total_month_year.innerText = value7;
 }
 
 function calcTotal_costs() {

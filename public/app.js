@@ -34,19 +34,34 @@ const next = () => {
         const navigation = document.querySelector(".navigation").style.display = "none";
     }
 
-    if(nameInput.value === ""){
+    if(nameInput.value == ""){
         nameInput.style.borderColor = "hsl(354, 84%, 57%)";
         errorMessages[0].style.display = "block";
     }
-    if(mailInput.value === ""){
+    else{
+        nameInput.style.borderColor = "hsl(229, 24%, 87%)";
+        errorMessages[0].style.display = "none";
+    }
+
+    if(mailInput.value == ""){
         mailInput.style.borderColor = "hsl(354, 84%, 57%)";
         errorMessages[1].style.display = "block"; 
     }
-    if(numberInput.value === ""){
+    else{
+        mailInput.style.borderColor = "hsl(229, 24%, 87%)";
+        errorMessages[1].style.display = "none";  
+    }
+
+    if(numberInput.value == ""){
         numberInput.style.borderColor = "hsl(354, 84%, 57%)";
         errorMessages[2].style.display = "block";
     }
     else{
+        numberInput.style.borderColor = "hsl(229, 24%, 87%)";
+        errorMessages[2].style.display = "none";  
+    }
+
+    if(nameInput.value !== "" && mailInput.value !== "" && numberInput.value !== ""){
         prevButton.style.visibility = "visible";
         currentSection >= sections.length - 1 ? currentSection = 4 : currentSection++;
         initNavigation(currentSection, sections);
@@ -55,14 +70,6 @@ const next = () => {
             calcTotal_costs();
             nextButton.innerText = "Submit";
         }
-
-        // set border color and error messages to default
-        nameInput.style.borderColor = "hsl(229, 24%, 87%)";
-        errorMessages[0].style.display = "none";
-        mailInput.style.borderColor = "hsl(229, 24%, 87%)";
-        errorMessages[1].style.display = "none"; 
-        numberInput.style.borderColor = "hsl(229, 24%, 87%)";
-        errorMessages[2].style.display = "none";
     }
 }
 const prev = () => {

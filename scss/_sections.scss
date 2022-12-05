@@ -135,13 +135,13 @@ main{
                                 border-radius: 10px;
                                 border: 1px solid $Light_gray;
                                 outline: none;
+                                padding-left: 20px;
                             }
                             input:focus{
                                 border: 1px solid $Purplish_blue;
                                 transition: 500ms;
                             }
                             ::placeholder{
-                                padding-left: 20px;
                                 font-weight: 500;
                                 font-size: 1.1rem;
                                 color: $Cool_gray;

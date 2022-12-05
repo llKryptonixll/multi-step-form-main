@@ -153,13 +153,13 @@ main .content-wrapper .right-container .section-container .personal-info-section
   border-radius: 10px;
   border: 1px solid hsl(229deg, 24%, 87%);
   outline: none;
+  padding-left: 20px;
 }
 main .content-wrapper .right-container .section-container .personal-info-section form .input-container input:focus {
   border: 1px solid hsl(243deg, 100%, 62%);
   transition: 500ms;
 }
 main .content-wrapper .right-container .section-container .personal-info-section form .input-container ::placeholder {
-  padding-left: 20px;
   font-weight: 500;
   font-size: 1.1rem;
   color: hsl(231deg, 11%, 63%);

@@ -99,9 +99,7 @@ function switchBilling_option () {
         changeBilling_amounts("$90/yr", "$120/yr", "$150/yr", "+$10/yr", "+$20/yr", "+$20/yr", "year");
 
         // display discount offer
-        discounts.forEach((discount) => {
-            discount.style.display = "block";
-        })
+        displayDiscount("block");
     }
     else{
         // this styles the text if user uses the switch
@@ -114,10 +112,15 @@ function switchBilling_option () {
         // change the values if user switches
         changeBilling_amounts("$9/mo", "$12/mo", "$15/mo", "+$1/mo", "+$2/mo", "+$2/mo", "month");
 
-        discounts.forEach((discount) => {
-            discount.style.display = "none";
-        })
+        // hide discount offer
+        displayDiscount("none");
     }
+}
+
+function displayDiscount (displayType){
+    discounts.forEach((discount) => {
+        discount.style.display = displayType;
+    })
 }
 
 function changeBilling_amounts(value1, value2, value3, value4, value5, value6, value7) {

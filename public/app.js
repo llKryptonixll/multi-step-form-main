@@ -55,9 +55,6 @@ const next = () => {
             calcTotal_costs();
             nextButton.innerText = "Submit";
         }
-        else{
-            nextButton.innerText = "Next Step";
-        }
 
         // set border color and error messages to default
         nameInput.style.borderColor = "hsl(229, 24%, 87%)";
@@ -71,6 +68,7 @@ const next = () => {
 const prev = () => {
     currentSection == 1 ? prevButton.style.visibility = "hidden" : prevButton.style.visibility = "visible";
     currentSection <= 0 ? currentSection = 0 : currentSection--;
+    nextButton.innerText = "Next Step";
     initNavigation(currentSection, sections);
 }
 

@@ -9,6 +9,15 @@ function initNavigation (n, item) {
       slide.style.display = "none";
     });
     item[n].style.display = "grid";
+
+    // show user in which section he is 
+    const steps = document.querySelectorAll(".step-index");
+    steps.forEach((step) => {
+        step.style.backgroundColor = "transparent";
+        step.style.color = "white";
+    });
+    steps[n].style.backgroundColor = "hsl(206, 94%, 87%)";
+    steps[n].style.color = "black";
 }
 
 initNavigation(currentSection, sections);

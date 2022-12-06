@@ -116,7 +116,7 @@ function switchBilling_option () {
         displayDiscount("none");
 
         // change summary amounts to mo if user clicks toggle 
-        changeSummary_amounts(`+$${1}/mo`, `+$${2}/mo`, `+$${2}/mo`, `+$${9}/yr`, `+$${12}/yr`, `+$${15}/yr`);
+        changeSummary_amounts(`+$${1}/mo`, `+$${2}/mo`, `+$${2}/mo`, `+$${9}/mo`, `+$${12}/mo`, `+$${15}/mo`);
     }
 }
 
@@ -138,9 +138,8 @@ function changeSummary_amounts(value1, value2, value3, value4, value5, value6) {
         }
     });
 
-    const planTypes = document.querySelectorAll(".plan-type");
+    const planTypes = document.querySelectorAll(".plan-option");
     const summaryHeader_amount = document.querySelector(".plan-amount"); 
-
     planTypes.forEach((type) => {
         if(type.innerText == "Arcade"){
             summaryHeader_amount.innerText = value4;
